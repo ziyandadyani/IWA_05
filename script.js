@@ -47,7 +47,7 @@ let currency = null
 
  if (_location === 'RSA' || _location === 'NAM') {
   _location ==='RSA' ? shipping = 400  : shipping = 600 
-  _location ==='RSA' ? currency = 'R' : currency = '$'
+  _location ==='RSA' ? currency = 'R' : currency = '$' 
  }
 
    else{
@@ -58,7 +58,7 @@ let currency = null
 
 
 let shoes = 300 * 1 
-let toys = 100 * 5 
+let toys = 100 * 5 *3
 let shirts = 150 * NONE_SELECTED
 let batteries = 35 * 2 
 let pens = 5 * NONE_SELECTED 
@@ -68,12 +68,12 @@ let pens = 5 * NONE_SELECTED
 let cost = shoes+ toys + batteries + pens + shirts
 
 
-if ((cost > 1000 && _location === 'RSA') ||(cost > 60 && _location ==='NAM') && customers === 1 ) {
+if ((cost >= 1000 && _location === 'RSA') ||(cost >= 60 && _location ==='NAM') && customers === 1 ) {
  shipping = 0 
 }
  
  
-if (shipping === 0 && customers !== 1){
+if ( (cost >= 1000 && _location === 'RSA') || ((cost >= 60 && _location ==='NAM')) && customers !== 1){
   console.log(FREE_WARNING)
 }
 
